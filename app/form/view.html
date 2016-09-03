@@ -1,0 +1,44 @@
+<div class="row form-group">
+  <div class="col-sm-4 col-sm-offset-1">
+
+    <p>You may add request here</p>
+
+    <div>
+      <label for="name">Name</label>
+      <input class="form-control" id="name" ng-model="name" type="text" name="name">
+    </div>
+
+    <div>
+      <label for="content">Content</label>
+      <textarea class="form-control" id="content" ng-model="content" name="content"></textarea>
+    </div>
+
+    <div>
+      <label for="project">Project</label>
+      <select class="form-control" name="project" id="project" ng-model="project">
+        <option ng-repeat="project in projects" value="{{project}}">
+          {{project}}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label for="priority">Priority</label>
+      <select class="form-control" name="priority" id="priority" ng-model="priority">
+        <option ng-repeat="priority in priorities" value="{{priority}}">
+          {{priority}}
+        </option>
+      </select>
+    </div>
+
+    <br>
+    <div>{{message}}</div>
+    <br>
+
+    <div>
+      <input class="btn btn-default" type="button" value="Add" ng-click="add_item()">
+    </div>
+
+  </div>
+</div>
+

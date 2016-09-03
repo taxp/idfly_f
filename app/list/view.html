@@ -1,0 +1,32 @@
+<div class="row form-group">
+    <div class="col-sm-10 col-sm-offset-1">
+        <p>Here is list of requests.</p>
+
+        <div class="col-sm-4">
+            <label for="project">Project</label>
+            <select class="form-control" name="project" id="project" ng-model="project_filter">
+                <option value="-1">Any</option>
+                <option ng-repeat="project in projects" value="{{project}}">
+                    {{project}}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-10 col-sm-offset-1">
+        <table tr-ng-grid="" items="requests" enable-filtering="false"
+               fields="['name', 'content', 'project', 'priority', 'date']">
+            <thead>
+            <tr>
+                <th field-name="name"></th>
+                <th field-name="content"></th>
+                <th field-name="project"></th>
+                <th field-name="priority"></th>
+                <th field-name="date" display-format="date"></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
